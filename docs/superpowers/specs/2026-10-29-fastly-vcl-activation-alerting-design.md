@@ -2,7 +2,7 @@
 
 ## Status
 
-Approved design, pending user review before implementation planning.
+Approved design; implementation is complete. Staging validation remains pending.
 
 ## Context
 
@@ -111,8 +111,9 @@ credentials.
 
 - The webhook provider and URL, and the user's chosen destination/channel, will
   be configured locally and are not needed to implement the watcher.
-- Exact Fastly read API calls and the available VCL representation for each
-  version must be confirmed during implementation and tested against mocked
-  responses before staging use.
+-   The implementation uses `GET /service/{service_id}/version` to identify the
+  active version and `GET /service/{service_id}/version/{version_id}/generated_vcl`
+  to retrieve the generated VCL for each side of the diff. Both endpoints are
+  read-only; mocked responses are covered by automated tests before staging use.
 - Production promotion is a separate follow-up after the staging trial is
   validated.

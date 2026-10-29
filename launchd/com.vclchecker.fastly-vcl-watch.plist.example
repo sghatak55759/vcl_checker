@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.vclchecker.fastly-vcl-watch</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/ABSOLUTE/PATH/TO/python3</string>
+    <string>/ABSOLUTE/PATH/TO/vcl_checker/fastly_vcl_watch.py</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>FASTLY_SERVICE_ID</key>
+    <string>REPLACE_WITH_FASTLY_SERVICE_ID</string>
+  </dict>
+  <key>StartInterval</key>
+  <integer>300</integer>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/Users/REPLACE_WITH_USERNAME/Library/Logs/fastly-vcl-watch.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/REPLACE_WITH_USERNAME/Library/Logs/fastly-vcl-watch.error.log</string>
+</dict>
+</plist>
